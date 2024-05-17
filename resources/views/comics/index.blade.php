@@ -2,6 +2,13 @@
 
 @section('content')
     <h1>Elenco Prodotti</h1>
+    {{-- @if (session('deleted')
+        <div class="alert" role="alert" >
+            {{session(deleted)}}
+            </div>
+    @endsession)
+
+    @endif --}}
     <table class="table">
         <thead>
             <tr>
@@ -28,7 +35,13 @@
                                 class="fa-regular fa-eye"></i> </a>
                         <a href="{{ route('comics.edit', $product) }}" class="btn btn-warning "><i
                                 class="fa-solid fa-pencil"></i></a>
-                        <button class="btn btn-danger "><i class="fa-solid fa-trash"></i></button>
+                        <form class="d-inline" action="{{ route('comics.destroy', $product) }}" method="POST" onsubmit="return confirm('sicuro di voler eliminare {{$product->title}}?')" >
+
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger  "><i class="fa-solid fa-trash"></i></button>
+
+                        </form>
                     </td>
 
                 </tr>
