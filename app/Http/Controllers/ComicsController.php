@@ -45,7 +45,7 @@ class ComicsController extends Controller
         $new_comic->artists = json_encode($form_data['artists']);
         $new_comic->writers = json_encode($form_data['writers']);
 
-        $new_comic->save();
+        // $new_comic->save();
 
         $form_data['slug'] = Helper::generateSlug($form_data['title'], new comic());
         $new_comic->fill($form_data);

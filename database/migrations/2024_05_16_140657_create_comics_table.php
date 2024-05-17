@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('sale_date');
             $table->string('type');
             $table->json('artists');
-            $table->json('writers');
             $table->timestamps();
         });
     }
