@@ -12,7 +12,7 @@
     <!-- Styles -->
     @vite('resources/js/app.js')
 
-    <title>Template</title>
+    <title>Fumetteria</title>
 </head>
 
 <body>

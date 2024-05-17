@@ -47,6 +47,10 @@ class ComicsController extends Controller
 
         $new_comic->save();
 
+        $form_data['slug'] = Helper::generateSlug($form_data['title'], new comic());
+        $new_comic->fill($form_data);
+        $new_comic->save();
+
         return redirect()->route('comics.show', $new_comic);
     }
 
@@ -61,17 +65,24 @@ class ComicsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, comic $comic)
     {
-        //
+        $form_data = $request->all();
+        if ($form_data['title'] === $comic->title) {
+            $form_data['slug'] = $comic->slug;
+        } else {
+            $form_data['slug'] = Helper::generateSlug($form_data['title'], new comic());
+        }
+        $comic->update($form_data);
+        return redirect()->route('comics.show', $comic);
     }
 
     /**

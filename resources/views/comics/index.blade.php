@@ -26,7 +26,8 @@
                     <td>
                         <a href="{{ route('comics.show', $product) }}" class="btn btn-success "> <i
                                 class="fa-regular fa-eye"></i> </a>
-                        <button class="btn btn-warning "><i class="fa-solid fa-pencil"></i></button>
+                        <a href="{{ route('comics.edit', $product) }}" class="btn btn-warning "><i
+                                class="fa-solid fa-pencil"></i></a>
                         <button class="btn btn-danger "><i class="fa-solid fa-trash"></i></button>
                     </td>
 
