@@ -23,16 +23,15 @@ class ComicRequest extends FormRequest
     {
         return [
             'title' => 'required|min:3|max:50',
-            'thumb' => 'max:255',
             'price' => 'required|min:2|max:255',
             'series' => 'required|min:1|max:255',
             'sale_date' => 'required|min:3|max:20',
             'type' => 'required|min:2|max:20',
         ];
     }
-    public function messages()
+    public function messages(): array
     {
-        [
+        return [
             'title.required' => 'Il titolo è un campo obbligatorio',
             'title.min' => 'Il titolo deve contenere almeno :min caratteri',
             'title.max' => 'Il titolo deve contenere non più di :max caratteri',

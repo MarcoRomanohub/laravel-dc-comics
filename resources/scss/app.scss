@@ -1,1 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
+
+footer {
+    margin-top: 20px;
+    height: 120px;
+    background-color: black;
+    text-align: center;
+    vertical-align: auto;
+
+    h1 {
+        line-height: 100px;
+    }
+}
