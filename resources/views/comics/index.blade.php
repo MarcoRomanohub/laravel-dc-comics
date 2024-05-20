@@ -2,11 +2,11 @@
 
 @section('content')
     <h1>Elenco Prodotti</h1>
-    {{-- @if (session('deleted'))
-        <div class="alert" role="alert">
-            {{ session(deleted) }}
+    @if (session('deleted'))
+        <div class="alert alert-success " role="alert">
+            {{ session('deleted') }}
         </div>
-    @endif --}}
+    @endif
 
     <table class="table">
         <thead>
